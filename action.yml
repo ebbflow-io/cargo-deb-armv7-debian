@@ -1,0 +1,16 @@
+# action.yml
+name: 'Static Deb package build for Rust on ARM Debian (i.e. Raspberry Pi)'
+description: 'Builds a debian package using cargo deb for Rust packages, statically linked (musl), targeting ARMv7'
+branding:
+  icon: 'package'
+  color: 'orange'
+inputs:
+  cmd:
+    description: 'build command'
+    required: true
+    default: 'cargo deb --target=armv7-unknown-linux-musleabihf --no-strip'
+runs:
+  using: 'docker'
+  image: 'docker://ebbflow/cargo.deb.armv7.debian:latest'
+  args:
+    - ${{ inputs.cmd }}
