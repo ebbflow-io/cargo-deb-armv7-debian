@@ -11,6 +11,6 @@ inputs:
     default: 'cargo deb --target=armv7-unknown-linux-musleabihf --no-strip'
 runs:
   using: 'docker'
-  image: 'docker://ebbflow/cargo.deb.armv7.debian:latest'
+  image: 'docker://ebbflow/cargo-deb-armv7-debian:latest'
   args:
     - ${{ inputs.cmd }}
