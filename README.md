@@ -1,4 +1,3 @@
-- https://github.com/mmstick/cargo-deb
 # `cargo deb` Build Environment (ubuntu armv7)
 
 Provides a build environment for executing `cargo deb` [1] and producing statically linked binaries for the built Debian (`.deb`) package.
