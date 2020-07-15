@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN apt-get install ca-certificates
 # Install rust using rustup
-ARG CHANNEL="nightly"
+ARG CHANNEL="stable"
 RUN curl -k "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init" -o rustup-init && \
     chmod +x rustup-init && \
     ./rustup-init -y --default-toolchain ${CHANNEL} --profile minimal && \
@@ -38,7 +38,6 @@ RUN /musl.sh \
 RUN echo "[build]\ntarget = \"armv7-unknown-linux-musleabihf\"" > ~/.cargo/config
 RUN echo "[target.armv7-unknown-linux-musleabihf]\nlinker = \"arm-linux-musleabihf-gcc\"" > ~/.cargo/config
 WORKDIR /volume
-RUN cargo deb --help
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
