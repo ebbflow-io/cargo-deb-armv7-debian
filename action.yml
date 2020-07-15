@@ -1,5 +1,5 @@
 # action.yml
-name: 'Static Deb package build for Rust on ARM Debian (i.e. Raspberry Pi)'
+name: 'Rust Cargo Deb Package Build (armv7, Debian)'
 description: 'Builds a debian package using cargo deb for Rust packages, statically linked (musl), targeting ARMv7'
 branding:
   icon: 'package'
