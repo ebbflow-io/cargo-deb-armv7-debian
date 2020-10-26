@@ -33,7 +33,7 @@ RUN /musl.sh \
                       --with-mode=thumb"
 
 RUN echo "[build]\ntarget = \"armv7-unknown-linux-musleabihf\"" > ~/.cargo/config
-RUN echo "[target.armv7-unknown-linux-musleabihf]\nlinker = \"arm-linux-musleabihf-gcc\"\nstrip = \"arm-linux-musleabihf-strip\"" > ~/.cargo/config
+RUN echo "[target.armv7-unknown-linux-musleabihf]\nlinker = \"arm-linux-musleabihf-gcc\"\nstrip = { path = \"arm-linux-musleabihf-strip\" }" > ~/.cargo/config
 WORKDIR /volume
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
