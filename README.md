@@ -19,7 +19,7 @@ The interface for this package was inspired/copied from the cargo-static-build [
 
 ## Inputs
 
-`cmd` - The command to be executed inside the container. Defaults to `cargo deb --target=armv7-unknown-linux-musleabihf --no-strip`
+`cmd` - The command to be executed inside the container. Defaults to `cargo deb --target=armv7-unknown-linux-musleabihf`
 
 ## Outputs
 
@@ -38,7 +38,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Deb Build
-      uses: ebbflow-io/cargo-deb-armv7-debian@1.0
+      uses: ebbflow-io/cargo-deb-armv7-debian@1.47.0-1
 ```
 
 A working example can be found in use by Ebbflow to build its client package for various OS and CPU architectures [here](https://github.com/ebbflow-io/ebbflow/blob/master/.github/workflows/continuous-integration.yml).
